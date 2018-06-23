@@ -1,0 +1,334 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>javascript Tutorial</title>
+</head>
+ <body onload="intervalImg()">  
+<body >    
+	<form name="form1">
+		<a href="index.html">Index</a>
+		<input type="text" name="url" value="https://www.gmail.com" id="url">
+		<input type="button" name="" value="start" onclick="myFun(this)" id="1">
+		<input type="button" name="" value="stop" onclick="myFun(this)" id="2">
+		<div id="output"></div>
+	</form>
+	<input type="text" id="item" onkeypress="return checkNo()" onpaste="return false">
+		<input type="text" id="itemChar" onkeypress="return checkChar()" onpaste="return false">
+	<div id="output"></div>
+	<input type="button" name="" value="Submit" onclick="additem()"> -->
+	<!-- <img id="myImage"> 
+	<script type="text/javascript" src="function.js"></script>
+</body>
+</html> --> 
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>javascript Tutorial</title>
+</head>
+<body>
+	<form name="=form1" action="index.html" method="get" onsubmit="return validation()">
+		<input type="text" id="firstName" name="firstName" value="">
+        <br> Last:
+        <input type="text" id="lastName" name="lastName" value="">
+        <br> Age:
+        <input type="text" id="age" name="age" value="">
+        <br>
+		<input type="submit" value="submit">
+	</form>
+	<script type="text/javascript" src="drag&drop.js"></script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <style>
+        .box {
+            height: 500px;
+            width: 500px;
+            padding: 20px;
+            margin: 0 50px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+        
+        #divid {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+	<div id="output"></div>
+	<div class="box" ondrop="dropD()" ondragover="dropO()">1<div ondragstart="startD()" draggable=true id="divid">DrAg Me!!</div></div>
+	<div class="box" ondrop="dropD()" ondragover="dropO()">2</div> -->
+	<!-- <div class="box" ondrop="dropD()" ondragover="dropO()">3</div>
+	<div class="box" ondrop="dropD()" ondragover="dropO()">4</div>
+	<div class="box" ondrop="dropD()" ondragover="dropO()">5</div> 
+	<script type="text/javascript" >
+		var holder;
+		var output=document.getElementById("output");
+		function startD(){
+			output.innerHTML="drag Started";
+			holder=event.target;
+		}
+		function dropD(){
+			event.preventDefault();
+			if(event.target.className="box"){
+					event.target.appendChild(holder);
+			}
+		}
+		function dropO(){
+			event.preventDefault();
+
+		}
+	</script>
+</body>
+</html> -->
+<!--******************************************* Game ************************************-->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+        .box {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+	<input type="button" name="Start" value="Start" style="background-color: blue;font-size: 1em;color: white;" 
+	onclick="start()">
+	<div id="result"></div>
+	<div id="result1"></div>
+	<div id="output"></div>
+	<script type="text/javascript" src="function.js"></script>
+</body>
+</html>-->
+
+<!-- <html>
+
+<head>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output"></div>
+    <form name="myForm">
+        <input type="url" id="url" name="url" class="highlight">
+        <input type="text" id="first" name="first">
+        <input type="text" id="last" name="last">
+        <textarea name="output1" class="highlight"></textarea>
+        <div id="another">Parent
+            <div id="one" class="highlight">Test 1</div>
+            <div id="two">Test 2</div>
+            <div id="three">Test 3</div>
+            <div id="four" class="highlight">Test 4</div>
+            <div id="five">Test 5</div>
+            <div id="six">Test 6</div>
+        </div>
+        <input id="btn1" type="button" onclick="myFun1()" value="Click Here"> </form>
+    <script>
+        var output = document.getElementById('output');
+        var highlightList = document.getElementsByClassName('highlight');
+
+        function myFun1() {
+            var html = "<h1>highlightList list</h1>";
+            for (var x = 0; x < highlightList.length; x++) {
+                if (highlightList[x].innerText) {
+                    html += highlightList[x].innerHTML + "<br>";
+                }
+                else if (highlightList[x].value) {
+                    html += highlightList[x].value + "<br>";
+                }
+            }
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title ></title>
+	<style type="text/css">
+	/*	#highlight .output {
+			background-color: red;
+			width: 20%;
+		}
+		input[name="1"]{
+			background-color: gray
+			}*/
+		/*.output{
+			background-color: gray
+			}*/
+		  /*#overlay {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 400px;
+            background-color: #ddd;
+            border: 1px solid black;
+            z-index: 1000;
+            }*/
+        /*.con {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 0.8em;
+            display: none;
+        }
+        
+        .acco {
+            font-size: 1.5em;
+            background-color: #ddd;
+        }
+        
+        .active {
+            display: block;
+            }*/
+        </style>
+    </head>
+    <body onload="buildonLoad()">
+    	<div id="message">Complete Javascript Course</div>
+    	<input type="text" name="" id="frdName"><input type="button" name="" value="ADD" onclick="addFriend()"><br><br>
+    	<div id="output"></div>
+	<!-- <div class="acco">Info 1</div>
+	<div class="con">Details  Details DetailsDetailsDetailsDetails
+	<img src="http://via.placeholder.com/350x150/ffff00/fff?text=Image10"></div>
+	<div class="acco">Info 2</div>
+	<div class="con">ConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConConCon ConCon
+		<img src="http://via.placeholder.com/350x150/ff0000/fff?text=Image5"></div> -->
+
+	<!-- <div class="output">Info 2</div>
+	<div class="output">Click me 5</div>
+	<input type="text" name="1" id="val1">
+	<input type="button" name="" value="submit" onclick="clickme()">
+	<div class="output" >Click me 6</div>
+	<div class="output" >Click me 7</div>
+	<div class="output">Click me 8</div>
+	<div class="output">Click me 9</div>
+	<div class="output">Click me 10</div> -->
+	<!-- <div id="overlay">
+		<div>
+			javascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorialjavascript Tutorial
+		</div>
+	</div> -->
+
+	<script type="text/javascript">
+		var msg=document.getElementById("message");
+		var output=document.getElementById("output");
+		var html="";	
+		var ary=["Pinkal","Disha","Chhaya","Riya","Jeel","Rani","krina"];
+		
+		function addFriend(){
+			var frdname=document.getElementById("frdName").value;
+			ary.push(frdname);
+			output.innerHTML="";
+			create();
+
+		}
+		function create(){			
+			buildonLoad();		
+			var a=document.querySelectorAll('#output .box');
+			var v=document.querySelectorAll('#output .vote');
+			var dr,vr;
+			for(var x=0;x<a.length;x++){
+
+				a[x].onclick=function(){
+			//dr=this.parentElement.getAttribute('data-row');
+				dr=this.closest('[data-row]').getAttribute('data-row');			
+				console.log(ary[dr]);
+				msg.innerHTML=ary[dr] + " is on row #" + dr;
+				vr=this.closest('[data-vote]').getAttribute('data-vote');
+				vr++;
+				this.parentElement.lastElementChild.innerText=vr;
+				var xxx=this.parentElement.setAttribute('data-vote',vr);
+				console.log(vr);
+				console.log(xxx);
+			
+		}
+	}
+}
+function buildonLoad(){
+	html='<table border=1 style="padding:5px;">';
+	for(var x=0;x<ary.length;x++){
+	html+='<tr data-row="'+x+'" data-vote="0">'+
+	'<td class="box">'+(x+1)+'</td>'+
+	'<td>'+ary[x]+'</td>'+
+	'<td class="vote">0</td></tr>';
+}
+html+='</table>';
+output.innerHTML=html;
+}
+
+
+
+/**************************toggle Classes*****************************/
+			// var a=document.querySelectorAll('.acco');
+			// var c=document.querySelectorAll('.con');
+
+			// for(var x=0;x<a.length;x++){
+		 // 		a[x].onclick=function(){
+		 // 			conf(this.nextElementSibling);
+		 // 			this.nextElementSibling.classList.toggle('active');
+		 // 		}
+		 // 	}
+
+		 // 	function conf(t){
+		 // 		for(var x=0;x<c.length;x++){
+		 // 			if(t!=c[x])
+		 // 			c[x].classList.remove('active');
+		 // 		}
+		 // 	}
+
+		// var message1=document.getElementById('message'); 
+		// var col=["orange","pink","purple","blue","red","green","aqua","yellow"];
+		// var qs=qsf('.output');
+		// function qsf(q1){
+		// 	return document.querySelectorAll(q1);
+		// }
+		// function swapBG(){
+		// 	for(var x=0;x<qs.length;x++){
+		// 		qs[x].style.backgroundColor=col[Math.floor(Math.random() * col.length)];
+		// 	}
+		// }
+		
+
+		// window.onload=function(){
+		// 	setInterval(swapBG,2000);
+		// }
+
+		// function clickme(){
+		// 	var a=document.getElementById('val1').value;
+		// 	var qs=qsf(a);
+		// 	var html="<h2>Result</h2>";
+
+		// 	message1.innerHTML=html;
+		// }
+		// function clickme(){
+		// 	// var a=document.getElementById('overlay');
+		// 	// a.style.visibility = (a.style.visibility == "visible") ? "hidden" : "visible";
+		// 	document.getElementById('val1').toggle('display:none');
+		// }
+	</script>
+</body>
+</html>

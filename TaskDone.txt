@@ -1,0 +1,62 @@
+
+Give daily update of your work in this channel before go home same as below format (it's compulsory).
+
+Task : Mention your task name or title.
+Work Done: - Explain your task in briefly. What points are completed in this task. 
+Task Status: Give your task status (Done, In Progress).
+Issue : Mention here if you are facing any issue when doing this task.
+
+Task : Learning NodeJs
+Work Done: Completed Asynchronous NodeJs Promises and Web Servers using Express library
+Task Status:  In Progress
+Issue : No issue
+
+05 Web Servers and Application Deployment
+********************************************JavaScript*****************************************************
+05-06-2018---->Javascript:Part1:section-1,2,3-upto 24
+06-06-2018---->Javascript:Part1:section-3,4,5,6-upto-82
+07-06-2018---->Javascript:Part1:section-6,7,8-upto-145
+08-06-2018---->Javascript:Part1:section-8,9-183
+09-06-2018---->Javascript:Part1:section-9,10
+11-06-2018---->Javascript:Part1:section-11,12-upto 290
+12-06-2018---->Javascript:Part1:section-12,13-upto 335
+13-06-2018---->Javascript:Part1:section-13,14,16,16
+
+
+14-06-2018---->Javascript:Part2:upto 39
+15-06-2018---->Javascript:Part2:upto 56
+16-06-2018---->Javascript:Part2:upto 79
+18-06-2018---->Javascript:Part2:upto 99
+19-06-2018---->Javascript:Part2: Completed
+
+*********************************************NodeJs********************************************************
+20-06-2018---->NodeJs:upto 17
+21-06-2018---->NodeJs:upto 33
+22-06-2018---->NodeJs:upto 46
+23-06-2018---->NodeJs:upto 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************************************************************
+
+developer.forcast.io
+https://darksky.net/dev/account
+API key: a731c1060a79389288c4f3174cfe1ad7
+Sample: https://api.darksky.net/forecast/a731c1060a79389288c4f3174cfe1ad7/37.8267,-122.4233

@@ -1,0 +1,467 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="t1"> <input type="button" name="" value="check" onclick="replaceT()"><br> 
+
+	<div id="output"></div>
+	<script type="text/javascript">
+
+		
+		let output=document.getElementById('output');
+		// let person = {
+  //           firstname: "Laurence"
+  //           , lastname: "Svekis"
+  //       };
+  //       console.log(person);
+  //       let {
+  //           firstname, lastname
+  //       } = person;
+  //       console.log(firstname);
+  //       console.log(lastname);
+  //       let myArr = ["JavaScript", "JS", "JS6", "ECMA"];
+  //       console.log(myArr);
+  //       let [a, b, c, d, e = "Java"] = myArr;
+  //       console.log(a);
+  //       console.log(b);
+  //       console.log(c);
+  //       console.log(d);
+  //       console.log(e);
+
+  //       function* pgGen(){
+  //       	let cnt=0;
+  //       	while(cnt<6){
+  //       		yield cnt++;
+  //       	}
+  //       }
+  //       let pg=pgGen();
+  //       for(let i=0;i<5;i++){
+  //       	let h=pg.next();
+  //       	if(h.done){break};
+  //       	console.log(h.value);
+  //       	console.log(h.done);
+
+  //       }
+  //       console.log(pg);
+  //       console.log(pg.next());
+  //       console.log(pg.next());
+  //       console.log(pg.next());
+  //       console.log(pg.next());
+
+  // let set1=new Set();
+  // set1.add("Chhaya");
+  // set1.add("jeel");
+  // set1.add("Chhaya");
+  // set1.add("krina");
+  // set1.add("KRINA");
+  // set1.delete("KRINA");
+  // console.log(set1); 
+
+  // set1.forEach(function(value,key){
+  // 	console.log(key + " " +value); 
+  // })
+
+  // let ary=[1,5,2,4,1,5,12,14,6,3,8,1,2,3,11]
+
+  // function dup(a){
+  // 	return [...new Set(a)];
+  // }
+  // console.log(dup(ary));
+
+
+  // let myMap=new Map();
+  // myMap.set("hello","Jeel");
+  // myMap.set("hello1","Jeel1");
+  // myMap.delete("hello1");
+  // console.log(myMap);
+
+  // let m1=ary.map(ary=>console.log(ary));
+
+  // let ary=[1,5,2,4,1,5,12,14,6,3,8,1,2,3,11];
+
+  // let a=ary.find(x=>x>10);
+  // console.log(ary[ary.findIndex(x=>x>10)]);
+
+  // function myAry(){
+  // 	return Array.from(arguments);
+  // }
+  // let d=myAry("a","b","c");
+  // console.log(d.findIndex(x=> x =="a"));
+
+  // let test=d.entries();
+  // console.log(test.next().value); 	
+
+  // let aaaa=[... test];	
+  // console.log(aaaa); 	
+  // console.log(ary.copyWithin(4,1)); 	
+  // console.log(ary.fill(0)); 	
+
+
+
+  class a{
+
+  	constructor(fname,lname){
+  		this.fname=fname;
+  		this.lname=lname;
+  	}
+
+
+  	fullName(){
+  		console.log(this.fname+ " " +this.lname);
+  	}
+
+  }
+ let f=new a("jeel","patel");
+ f.fullName();
+	</script>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    /*------------------------------Chellenge -1-----------------------------------*/
+      //let ary=[{name:"p1",age:"20",height:"150"},{name:"p2",age:"22",height:"155"},{name:"p3",age:"19",height:"157"}];
+
+
+        // var p1Height=150,p2Height=155,p3Height=158;
+        // var p1Age=25,p2Age=22,p3Age=26;
+        // let p1=p1Height+p1Age*5;
+        // let p2=p2Height+p2Age*5;
+        // let p3=p3Height+p3Age*5;
+
+
+        //   if(p1>p2 && p1>p3){
+        //       console.log("P1 Wins");
+        //   }
+        //   else if(p2>p1 && p2>p3)
+        //     console.log("P2 Wins");
+        //   else
+        //     console.log("P3 Wins");
+
+        /*------------------------------Chellenge -2 -----------------------------------*/
+
+      //   const years=[1998,2000,1972,2010];
+
+      //   function printFullAge(years){
+      //     let ages=[];
+      //     let output=[];
+      //     for(let i=0;i<years.length;i++){
+      //       ages.push(calculateAge(years[i]));
+      //     }
+      //     for(let i=0;i<ages.length;i++){
+      //       if(ages[i]>=18)
+      //       {
+      //         console.log("Person is " + ages[i] +" old and full age.");
+      //          output.push(true);
+      //       }
+      
+      //       else
+      //       {
+      //         console.log("Person is " + ages[i] +" old and not full age.");
+      //         output.push(false);
+      //       }
+      
+      //     }
+      //     function calculateAge(year){ 
+      //       return 2018-year;
+      //     }
+      //     return output;
+      //   }
+
+      //   let full_1=printFullAge(years);
+      //   let full_2=printFullAge([2014,1990,1981]);
+      // console.log(full_1);
+      // console.log(full_2);
+
+    //   var age=23;
+
+    //   var aa=function(){
+
+    //    var aaa=44;
+    //    console.log(c);
+    //    var de=145;
+    //    function bb(){
+    //     var d=12;
+    //     console.log("hello");
+    //   }
+    //   bb();
+    //   cc();
+    // }
+    // aa();
+    // function cc(){
+    //   var c=12;
+    //   console.log(age,aaa,c,d);
+    // }
+  </script>
+</body>
+</html> -->
+
+<!-- ************************** PART 2- ES6 ************************************* -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    let firstname='jeel';
+    let lastname='bhatt';
+    const year=1997;
+
+    function calAge(year){
+      let date=new Date();
+      let curyear=date.getFullYear();
+      console.log(date);
+       return curyear-year;
+    }
+
+    console.log(`age: ${calAge(year)} firstname is ${firstname}`);
+   const years=[1998,1990,1985,1997];
+   const ary=years.map((y,i)=>{
+     let date=new Date().getFullYear();
+    return `Age : ${date-y} of ${years[i]}`
+ });
+   console.log(ary);
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Section 7: Get Ready for the Future: ES6 / ES2015</title>
+
+  <!-- <style>
+  .box {
+    width: 200px;
+    padding: 60px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+  }
+
+  .green { background-color: green; }
+  .blue { background-color: dodgerblue; }
+  .orange { background-color: orangered; }
+
+</style>
+ -->
+</head>
+
+<body>
+<!--   <h1>Section 7: Get Ready for the Future: ES6 / ES2015</h1>
+
+  <div class="box green">I'm green!</div>
+  <div class="box blue">I'm blue!</div>
+  <div class="box orange">I'm orange!</div> -->
+
+  <!-- <script src="script.js"></script> -->
+  <script type="text/javascript">
+
+          // const box={
+
+          //   color: 'green',
+          //   position:1,
+          //   clickMe:function(){
+          //     document.querySelector('.green').addEventListener('click',()=>{
+          //       alert(`Box Color: ${this.color} and Position: ${this.position}`);
+
+          //     });
+
+          //   }
+          // }
+          // box.clickMe();
+
+         // let abc=(y)=>{
+         //    let age=2018-y;
+         //    return [y,age];
+         //  };
+         //  let [year,age]=abc(1997);
+         //  console.log(year);
+         //  console.log(age);
+
+         // const boxes=document.querySelectorAll('.box');
+
+         // const ary=Array.from(boxes);
+         // ary.forEach(el=>el.style.backgroundColor='blue');
+
+         // for(const c of ary){
+
+         //    if(c.className.includes('blue')){
+         //        continue;
+
+         //    }
+         //    c.textContent='Changed to blue';
+         // }
+
+         // const ages=[11,18,15,20,25,17];
+
+         // console.log(ages.find(c=>c>=18));
+
+         // const h= document.querySelector('h1');
+         // const boxes= document.querySelectorAll('.box');
+
+         // const all=[h,... boxes];
+
+         // Array.from(all).forEach(c=>c.style.color='red');
+
+         // function fullAge(limit,... arg){
+         //    arg.forEach((c)=>console.log((2018-c)>=limit));
+         // }
+         // fullAge(18,2017,1998,1990,2005);
+
+         // const q=new Map();
+         // q.set(1,11);
+         // q.set(2,22);
+         // q.set(3,33);
+         // q.set(4,44);
+
+         // q.forEach((v,k)=>{
+         //    console.log(`${k} : ${v}`);
+         // });
+
+         // for(let [v,k] of q.entries()){
+         //     console.log(`${k} : ${v}`);
+         // }
+
+        //  class Person{
+
+        //   constructor(name,job,year){
+
+        //     this.name=name;
+        //     this.job=job;
+        //     this.year=year;
+        //   }
+
+        //   calAge(){
+        //     let yr=new Date().getFullYear();
+        //     console.log( yr-this.year);
+        //   }
+        // }
+
+        // class Athlete extends Person{
+
+        //   constructor(name,job,year,Olympicgames,medals){
+
+        //     super(name,job,year);
+        //     this.Olympicgames=Olympicgames;
+        //     this.medals=medals;
+        //   }
+        //   wonMedal(){
+        //     this.medals++;
+        //     console.log(this.medals);
+        //   }
+
+        // }
+        // const jeel=new Athlete("Jeel","Developer",1997,3,15);
+        // jeel.calAge();
+        // jeel.wonMedal();
+
+
+        /*************************   Coding Chellenge 5 ***************************************/
+
+        class Element{
+
+          constructor(name,buildYear){
+
+            this.name=name;
+            this.buildYear=buildYear;
+          }
+
+        }
+
+        class park extends Element{
+
+          constructor(name,buildYear,trees,area){
+
+            super(name,buildYear);
+            this.trees=trees;
+            this.area=area;
+          }
+
+          treeDensity(){
+
+            const density=this.trees/this.area;
+            console.log(`${this.name} has a tree desity of ${density} trees per square km.`);
+
+          }
+
+        }
+
+        class streets extends Element{
+
+          constructor(name,buildYear,length,size=3){
+
+            super(name,buildYear);
+            this.length=length;
+            this.size=size;
+
+          }
+
+          classifyStreet(){
+            const classify= new Map();
+            classify.set(1,'tiny');
+            classify.set(2,'small');
+            classify.set(3,'normal');
+            classify.set(4,'big');
+            classify.set(5,'huge');
+            console.log(`${this.name} build in the ${this.buildYear} is a ${classify.get(this.size)} street`);
+          }
+        }
+
+
+        const allParks=[new park('Green park',1980,200,.2),new park('National Park',1950,2500,20),new park('vivekanad Park',1995,250,10) ];
+        
+        const allStrees=[new streets('Gokul',1980,5.5,4),new streets('Sunset',1977,2,2),new streets('Anand',1990,2.5,3),new streets('Radha',1992,3)];
+
+        function avg(ary){
+
+          const sum=ary.reduce((prev,cur,index)=>prev+cur,0);
+
+          return [sum,sum/ary.length];
+
+        }
+
+        function reportPark(p){
+
+          console.log('-----PARKS REPORT-----');
+          p.forEach(el=>el.treeDensity());
+
+          const age=p.map(el=> new Date().getFullYear()-el.buildYear);
+          const [totalAge,avgAge]=avg(age);
+          console.log(`${p.length} parks have an average of ${avgAge} years`);
+
+
+          const tName=p.map(el=>el.trees).findIndex(el=>el>=1000);
+          console.log(`${p[tName].name} have more 1000 trees`);
+
+
+        }
+
+        function reportStreet(s){
+
+          console.log('-----STREETS REPORT-----');
+          const [totalLength,avgLength]=avg(s.map(el=>el.length));
+          console.log(`${s.length} street have an average of ${avgLength} km  length`);
+
+          s.forEach(el=>el.classifyStreet());
+        }
+
+        reportPark(allParks);
+        reportStreet(allStrees);
+      </script>
+    </body>
+    </html>

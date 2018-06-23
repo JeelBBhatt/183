@@ -1,0 +1,940 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="button" name="" value="PopUp" onclick="popUp()">
+	<input type="button" name="" value="PopUpClose" onclick="popUpClose()">
+	<script type="text/javascript">
+		var w;
+		function popUp(){
+			w=window.open("index1.html","_blank","width=300,height=300");
+		}
+		function popUpClose(){
+			w.close();
+		}
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="sWord()">
+	<div id="message">Complete Javascript Course</div>
+	<input type="text" name="name" id="name">
+	<input type="button" name="" value="Guess" onclick="guessW()">
+	<div id="output"></div>
+	<script type="text/javascript">
+		message=document.getElementById('message');
+		
+		output=document.getElementById('output');
+		ary=["madhvi","shreya","krina","jeel","tIne"];
+		var w,randomword;
+		var a="Hello HHII";
+		console.log(a.substr(2,3))
+		function sWord(){
+			w=ary[Math.floor(Math.random() * ary.length)].toLowerCase();
+			randomword=w;
+			var s="";
+			var wLength=w.length;
+			for(var x=0;x<wLength;x++){
+				var i=Math.floor(Math.random() * w.length);
+				s +=w[i]; 
+				w=w.substr(0,i)+w.substr(i+1);
+				console.log(w);
+			}
+			message.innerHTML=s;
+		}
+		function guessW(){
+			name=document.getElementById("name").value;
+			if(randomword==name)
+			{
+				output.innerHTML="Correct";
+			}
+			else
+				output.innerHTML="Wrong";
+		}
+	</script>
+</body>
+</html>
+-->
+
+ <!-- <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	<input type="date" name="date" id="date" onchange="start()"><br>
+ 	<div id="message"></div>
+ 	<script type="text/javascript"> 
+ 		var message=document.getElementById('message');
+ 		var cDate,eDate,s,h,m,t,d;	
+ 		//var getD=document.getElementById('date').value;
+ 		function start(){
+ 		var getD=event.target.valueAsDate;
+ 		eDate=new Date(getD);		
+ 		updateTime();
+ 		t=setTimeout(update,1000);
+ 		}
+ 		function update(){
+ 			updateTime();
+ 		t=setTimeout(update,1000);
+ 		}
+ 		function updateTime(){
+ 			cDate=new Date();
+ 			var dur=eDate-cDate;
+ 			s=Math.floor(dur % (1000*60)/1000);
+ 			m=Math.floor(dur % (1000*60*60)/(1000*60));
+ 			h=Math.floor(dur % (1000*60*60*24)/(1000*60*60));
+ 			d=Math.floor(dur / (1000*60*60*24));
+
+ 			message.innerHTML="Day: "+d +" Houres: "+ h + " Minutes: "+ m + " Seconds: " + s;
+ 		}
+
+ 	</script>
+ </body>
+ </html> -->
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ 	<style type="text/css">
+ 		 .gameboard {
+            width:600px;
+            height:500px;
+            margin: 0 auto;
+            border:1px solid #ddd;
+        }
+        .office {
+            float:left;
+            width:120px;
+            height:170px;
+            overflow: hidden;
+            position: relative;
+            border:1px solid #ddd;
+            margin:10px 30px;
+        }
+        
+        
+        .desk{
+            width:100%;
+            height:50px;
+            bottom: 0px;
+            position: absolute;
+            background-color: burlywood;
+            z-index:2;
+        }
+        
+        .computer {
+            background: url('com.jpg') bottom center no-repeat;
+            background-size: 100% 100%;
+            position:relative;
+            top:100%;
+            width:100%;
+            height:80%;
+            transition: all .05s;
+        }
+        
+        .popup{
+            top:0;
+        }
+ 	</style>
+ </head>
+ <body>
+ 	Score: <span class="Score"></span>
+ 	<input type="button" name="" value="start" onclick="start()">
+ 	<div class="gameBoard"></div>
+
+ 	<script type="text/javascript">
+ 		  window.onload = build;
+        var computer,timer,ranCom;
+        var offices =  6;
+        var c=0,coff=true;
+        function build(){
+            var html = "<h1>Hit the computer</h1>";
+            for(var x=0;x<offices;x++){
+                html += '<div class="office"><div class="desk"></div><div class="computer"></div></div>';
+            }
+            document.querySelector('.gameBoard').innerHTML = html;
+            computer=document.querySelectorAll('.computer');
+            for(var x=0;x<computer.length;x++){
+                computer[x].addEventListener('click',hitcomputer,false);
+            }
+        }
+        
+        function popup(){
+        	coff=true;
+            ranCom = computer[Math.floor(Math.random() * computer.length)];
+            ranCom.classList.add('popup');
+            var rTime = (Math.floor(Math.random() * 10) * 10) + 500;
+            timer = setTimeout(hidecomputer, rTime);
+        }
+        
+        
+        function hidecomputer(){
+            ranCom.classList.remove('popup');
+             popup();
+        }
+        function hitcomputer(){
+            event.target.classList.remove('popup');
+            if(coff){
+            	coff=false;
+            	c++;
+            	document.querySelector('.Score').innerHTML=c;
+            
+            }            
+             popup();
+        }
+        
+        function start(){
+            popup();
+        }
+ 	</script>
+ </body>
+ </html> -->
+
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	 <input type="file" multiple name="upFl" id="upFl" onchange="upFile(this.files)"> 
+ 	 <div id="message">JavaScript Course</div> 
+ 	 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  type="text/javascript"></script> 
+ 	<script type="text/javascript">
+ 		var message=document.getElementById('message');
+ 		var output="Hello ";
+
+ 		if(localStorage.getItem('test1')){
+ 			message.innerHTML=localStorage.getItem('test1');
+ 		}
+ 		if(localStorage.getItem('count')){
+ 			var cnt=Number(localStorage.getItem('count'))+1;
+ 			message.innerHTML +=Number(localStorage.getItem('count'))+1;
+ 			localStorage.setItem('count',cnt);
+ 		}else
+ 		{
+ 			localStorage.setItem('count',0);
+ 		}
+ 		//localStorage.setItem('test1',output);
+
+
+
+ 		// window.onload=function(){
+ 		// 	navigator.geolocation.getCurrentPosition(mapData);
+ 		// }
+
+ 		// function mapData(data){
+ 		// 	 var options = {
+   //              center: {
+   //                  lat: data.coords.latitude
+   //                  , lng: data.coords.longitude
+   //              }
+   //              , zoom: 5
+   //          }
+   //          var map = new google.maps.Map(m, options);
+ 		// 	console.dir(data);
+ 		// }
+
+
+
+
+ 		// if(window.FileReader){
+
+ 		// 	message.innerHTML="FileReader is available";
+ 		// }
+ 		// else{
+ 		// 	message.innerHTML="FileReader is not available";
+ 		// }
+
+ 		// function upFile(files){
+ 		// 	for(var x=0;x<files.length;x++){
+ 		// 		var fReader=new FileReader();
+ 		// 		var name=files[x].name;
+ 		// 		fReader.onload=function(e){					
+ 		// 			//console.log(e.target.result);
+ 		// 			message.innerHTML+='<br>'+name+'<br>';
+ 		// 			message.innerHTML+=e.target.result;
+ 		// 		}
+ 		// 		fReader.readAsText(files[x]);
+ 		// 	}
+ 		// }
+ 	</script>
+ </body>
+ </html> -->
+
+
+ <!-- <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ 	<style>
+ 	.item {
+ 		border: 1px solid black;
+ 		padding: 1%;
+ 		width: 20%;
+ 		float: left;
+ 		height: 150px;
+ 	}
+
+ 	.img-fluid {
+ 		max-width: 40%;
+ 		padding: 1%;
+ 	}
+
+ 	.productItem .btn{
+ 		border: 1px solid black;
+ 		text-decoration: none;
+ 		background-color: green;
+ 		color: azure;
+ 		border-radius: 10px;
+ 		padding: 3px;
+ 	}
+ 	.remove {
+ 		background-color: red;
+ 	}
+ </style>
+</head>
+<body onload="init()">
+	<div id="output"></div><br>
+	<div id="result"></div>
+	<script type="text/javascript">
+		var output=document.getElementById('output');
+		var result=document.getElementById('result');
+		var cart=[];
+		var items=[{name:"iPads",Details:"White",cost:"5000"},
+		{name:"Tablets",Details:"White",cost:"5300"},
+		{name:"LCD",Details:"22 inch",cost:"5500"},
+		{name:"iPhones",Details:"White",cost:"6000"},
+		{name:"LED",Details:"24 inch",cost:"4000"},
+		{name:"Camera",Details:"25 MP",cost:"5000"},
+		{name:"Laptops",Details:"intel i7",cost:"4000"},
+		{name:"Tv",Details:"50 inch",cost:"5000"},
+		{name:"Watche",Details:"White",cost:"200"}]
+
+		function init(){
+			build();
+			var q=document.querySelectorAll('.productItem');
+			for(var x=0;x<q.length;x++){
+				q[x].addEventListener("click",function(e){
+					e.preventDefault();
+					addToCart();
+				})
+			}
+		}
+
+		function addToCart(){
+			var et=event.target.dataset;
+			var itemincart=false;
+			et.qty=1; 
+			cart.forEach(function(v){
+				if(v.id == et.id){
+					v.qty=parseInt(v.qty)+parseInt(et.qty);
+					itemincart=true;
+				}
+
+			});
+			if(!itemincart){
+				cart.push(et);
+			}
+			localStorage.setItem("sCart",JSON.stringify(cart));
+
+			outputCart();
+		}
+
+		function outputCart(){
+			if(localStorage.getItem("sCart")!=null){
+				cart=JSON.parse(localStorage.getItem("sCart"));
+			}
+			var html = '<table border=1 cellpadding=10><tr><th>Item</th><th>Detail</th><th>cost</th><th>Quentity</th><th>subtotal</th><th>Options</th></tr>';
+
+			var total=0;
+
+			cart.forEach(function(v){
+
+				var stotal=v.qty*v.price;
+				total +=stotal;
+				html +='<tr>'+'<td>'+v.name +'</td><td>'+v.s +'</td><td>'+v.price +'</td><td>'+v.qty +'</td><td>'+stotal +'</td>'+'<td><span class="remove btn" onclick="remove(' + v.id + ')">x</span></td>'+'</tr>';
+
+			});
+			html +='<tr><td colspan=6>Total ' + fMoney(total) + '</td></tr></table>';
+			result.innerHTML = html;
+		}
+
+		function remove(id){
+			for(var x=0;x<cart.length;x++){
+				if (cart[x].id == id) {
+					var rem = cart.splice(x, 1);
+				}
+			}
+			localStorage.setItem("sCart",JSON.stringify(cart));
+			outputCart();
+
+		}
+		function build(){
+			var html="";
+			for(var x in items){
+				html += '<div class="item"><h3>' + items[x].name + '</h3><img src="http://placehold.it/350x150" class="img-fluid"><div>' + items[x].Details + ' <a href="#" class="productItem" data-name="' + 
+				items[x].name + '" data-s="' + items[x].Details + '"  data-price="' + items[x].cost + '" data-id="' + x + '" >Add to Cart</a></div></div>';
+               // x++;
+ 			//console.log(items[x]);
+ 		}
+ 		output.innerHTML += html;
+ 	}
+ 	function fMoney(n) {
+ 		return '$' + (n / 100).toFixed(2);
+ 	}
+ 		// var obj={name:"jeel",q:"16",color:"white"};
+ 		// var jobj={"name":"jeel","q":"16","color":"white"};
+ 		// var str=JSON.stringify(jobj);
+ 		// var pcode=JSON.parse(str);
+
+ 	</script>
+ </body>
+ </html> -->
+
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ 	<style type="text/css">
+ 		#canvas1 {
+ 			border: 1px solid black;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 	<canvas id="canvas1"></canvas>
+
+ 	<script type="text/javascript">
+
+ 		var canvas=document.getElementById('canvas1');
+ 		var ctx=canvas.getContext('2d');
+ 		canvas.width=400;
+ 		canvas.height=400;
+ 		// ctx.fillStyle = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+ 		// ctx.lineWidth=8;
+ 		// ctx.strokeStyle = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+ 		// ctx.beginPath();
+ 		// ctx.arc(60,100,50,0,2*Math.PI);
+ 		// ctx.moveTo(60,50);
+ 		// ctx.lineTo(60,150);
+ 		// ctx.stroke();
+ 		//  ctx.font = "24px Arial";
+ 		// ctx.fillText("Hello Jeel",10,200);
+ 	</script>
+ </body>
+ </html> -->
+
+ <!-- ---------------------------JSON and AJAX------------------------------------ -->
+
+<!-- <html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .toggle {
+            padding: 10px;
+            background-color: aliceblue;
+            font-size: 1.3em;
+            margin: 10px;
+        }
+        
+        .active {
+            background-color: aquamarine;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Party invite Checklist</div>
+    <div id="output">Complete JavaScript Course </div> Guest Name :
+    <input type="text" id="guestName"> +
+    <input type="number" id="guestNum" value="0">
+    <input type="button" value="add">
+    <script src="json.json"></script>
+    <script>
+        var party = [];
+        var el;
+        var output = document.getElementById('output');
+        window.onload = buildList;
+        var addGuest = document.querySelector('input[type="button"]');
+        addGuest.addEventListener('click', function (e) {
+            var g = document.getElementById('guestName');
+            var n = document.getElementById('guestNum');
+            message('?', g.value + ' +' + n.value, party.length, '');
+            party.push({
+                name: g.value
+                , guests: Number(n.value)
+                , status: false
+            })
+            g.value = "";
+            n.value = 0;
+        })
+        output.addEventListener('click', function (e) {
+            el = e.target;
+            var ds = el.dataset;
+            el.classList.toggle('active');
+            el.children[0].innerHTML = el.children[0].innerHTML == '?' ? '?' : '?';
+            party[ds.id].status = party[ds.id].status ? false : true;
+            console.log(party);
+        })
+
+        function buildList() {
+            party = JSON.parse(data);
+            for (var x = 0; x < party.length; x++) {
+                var person = party[x].name + ' +' + party[x].guests;
+                if (party[x].status) {
+                    message('?', person, x, 'active');
+                }
+                else {
+                    message('?', person, x, '');
+                }
+            }
+        }
+
+        function message(m, person, id, c) {
+            output.innerHTML += '<div class="toggle ' + c + '" data-id="' + id + '" data-person="' + person + '" ><span>' + m + '</span> ' + person + ' </div>';
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="init()">
+
+	<script type="text/javascript">
+		function init(){
+			loadJSON(function(response){
+				console.log(JSON.parse(response));
+			});
+		}
+		
+		function loadJSON(callback){
+		var xHR=new XMLHttpRequest;
+
+		xHR.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+			callback(this.responseText);
+		}
+		else{
+			return false;
+		}
+		}
+		xHR.open('GET','https://api.myjson.com/bins/7ydsu',true);
+		xHR.send();
+	}
+	</script>
+</body>
+</html> -->
+
+
+
+<!-- <html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .box {
+            font-size: 1.5em;
+            background-color: aliceblue;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output">Complete JavaScript Course </div>
+    <input type="button" id="myButton" value="New Country">
+    <input type="text" id="guess">
+    <input type="button" id="myGuess" value="Guess">
+    <br> <img src="" width="100px">
+    <div id="output1" class="box"></div>
+    <div id="output2" class="box"></div>
+    <script>
+        window.onload = init;
+        var pick = "";
+
+        function init() {
+            document.getElementById('myButton').addEventListener('click', myLoader, false);
+            document.getElementById('myGuess').addEventListener('click', guessWord, false);
+        }
+
+        function myLoader() {
+            var xHR = new XMLHttpRequest();
+            xHR.onload = rOutput;
+            xHR.open('get', 'https://restcountries.eu/rest/v2/all', true);
+            xHR.send();
+        }
+
+        function guessWord() {
+            var g = document.getElementById('guess').value;
+            var userGuess = '';
+            g.toLowerCase();
+            for (var x = 0; x < pick.name.length; x++) {
+                if (x >= g.length) {
+                    break;
+                }
+                if (g[x] == pick.name[x].toLowerCase()) {
+                    userGuess += g[x];
+                }
+                else {
+                    userGuess += '-';
+                }
+            }
+            // toLowerCase
+            document.getElementById('output2').innerHTML = userGuess;
+        }
+
+        function rOutput() {
+            var myObj = JSON.parse(this.responseText);
+            pick = myObj[Math.floor(Math.random() * myObj.length)];
+            var ww = '';
+            for (var x = 0; x < pick.name.length; x++) {
+                ww += '-';
+            }
+            document.querySelector('img').src = pick.flag;
+            document.getElementById('output1').innerHTML = shuffleWord(pick.name);
+            document.getElementById('output2').innerHTML = ww;
+        }
+
+        function shuffleWord(w) {
+            var response = '';
+            w = w.split('');
+            while (w.length > 0) {
+                response += w.splice(Math.floor(Math.random() * w.length), 1);
+            }
+            return response.toLowerCase();
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+ https://www.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyAsknQvaaAxV08e9SP_FFIBmHoPQSiNXRU&q=test&maxResults=20
+
+ AIzaSyAsknQvaaAxV08e9SP_FFIBmHoPQSiNXRU 
+<head>
+	<title></title>
+</head>
+<body>
+<div id="output">Complete JavaScript Course </div>
+    <input type="text" id="searchYoutube">
+    <input type="button" id="search" value="Search Youtube">
+    <div id="output1"></div>
+    <script>
+        window.onload = init;
+
+        function init() {
+            document.getElementById('search').addEventListener('click', ySearch, false);
+        }
+
+        function ySearch() {
+            var searchTerm = document.getElementById('searchYoutube').value;
+            searchTerm = encodeURIComponent(searchTerm);
+            // https://www.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyAsknQvaaAxV08e9SP_FFIBmHoPQSiNXRU&q=test&maxResults=20
+            var url = 'https://www.googleapis.com/youtube/v3/search/?part=snippet&keyAIzaSyAsknQvaaAxV08e9SP_FFIBmHoPQSiNXRU&q=' + searchTerm + '&maxResults=20';
+            getJSON(url, function (data) {
+                showResults(data.items);
+            })
+        }
+
+        function showResults(results) {
+            var html = "";
+            for (var value in results) {
+                console.log(results[value]);
+                var title = results[value].snippet.title;
+                var description = results[value].snippet.description;
+                var img = results[value].snippet.thumbnails.default.url;
+                html += '<div><h3>' + title + '</h3><p>' + description + '</p><img src="' + img + '"></div>';
+            }
+            document.getElementById('output1').innerHTML = html;
+        }
+
+        function getJSON(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    callback(xhr.response);
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .active {
+            background-color: aliceblue;
+        }
+        
+        .question {
+            font-size: 1.5em;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output">Complete JavaScript Course </div>
+    <div id="output1"></div>
+    <div>
+        <input type="button" id="prev" value="prev">
+        <input type="button" id="next" value="next">
+        <script>
+            window.onload = init;
+            var myData = {};
+            var page = 0;
+            var score = 0;
+            var userAnswer = [];
+            var output = document.getElementById('output1');
+            document.getElementById('next').addEventListener('click', function () {
+                move(page + 1);
+            })
+            document.getElementById('prev').addEventListener('click', function () {
+                move(page - 1);
+            })
+
+            function move(a) {
+                if (a < 0) {
+                    a = 0;
+                }
+                if (a >= myData.length) {
+                    summary();
+                }
+                else {
+                    page = a;
+                    buildPage();
+                }
+            }
+
+            function summary() {
+                score = 0;
+                var html = '<h1>Summary</h1>';
+                for (var x = 0; x < myData.length; x++) {
+                    html += "Question " + (x + 1) + " ";
+                    if (myData[x].correct == userAnswer[x]) {
+                        html += "correct <br>";
+                        score++;
+                    }
+                    else {
+                        html += "wrong <br>";
+                    }
+                }
+                html += "Your score was " + score + " out of " + myData.length;
+                output.innerHTML = html;
+            }
+            output.addEventListener('click', function () {
+                for (var x = 0; x < this.children.length; x++) {
+                    this.children[x].classList.remove('active');
+                }
+                if (!event.target.classList.contains('question')) {
+                    userAnswer[page] = Number(event.target.dataset.index);
+                    event.target.classList.add('active');
+                }
+            })
+
+            function init() {
+                getJSON('http://api.myjson.com/bins/12qsf', function (response) {
+                    myData = response;
+                    buildPage();
+                })
+            }
+
+            function buildPage() {
+                var p = myData[page];
+                var html = '';
+                html += '<div class="question">' + p.question + '?</div>';
+                for (var x = 0; x < p.answers.length; x++) {
+                    var answer = x == p.correct ? true : false;
+                    var aClass = userAnswer[page] == x ? 'active' : '';
+                    html += '<div class="' + aClass + '" data-id="' + answer + '" data-index="' + x + '">' + p.answers[x] + '</div>';
+                }
+                output.innerHTML = html;
+            }
+
+            function getJSON(url, callback) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('get', url, true);
+                xhr.responseType = 'json';
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        callback(xhr.response);
+                    }
+                }
+                xhr.send();
+            }
+        </script>
+</body>
+
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        // let Person=function(name,DOB,job){
+        //     this.name=name;
+        //     this.birthyear=DOB;
+        //     this.job=job;
+            // this.calculateAge=function(){
+            //     return 2018-this.birthyear;
+            // }
+       // }
+
+        // Person.prototype.calculateAge=function(){
+        //         console.log( 2018-this.birthyear);
+        //     };
+        // var john=new Person("John",1997,"designer");
+        // john.calculateAge();
+
+        // var personProto={
+
+        //     calculateAge:function(){
+        //         console.log( 2018-this.birthyear);
+        //     }};
+        // var mike=Object.create(personProto);
+        // mike.name="mike";
+        // mike.job="developer";
+        // mike.yr=1998;
+
+        // var obj1={name:"jeel",age:27};
+        // var obj2=obj1;
+        // obj1.age=21;
+
+        // function retirement(retirementAge){
+        //     a=" years remainig for retirement";
+        //     return function(yearOfBirth){
+        //         var age=2018- yearOfBirth;
+        //         console.log((retirementAge-age)+a);
+
+        //     }
+        // }
+        // retirement(68)(1997);
+        /**************************Coding chellenge-4********************************/
+        (function(){
+
+            var Question=function(question,choice,answer){
+
+                this.question=question;
+                this.choice=choice;
+                this.answer=answer;
+            }
+            Question.prototype.display=function() {
+                console.log(this.question);
+                for(let i=0;i<this.choice.length;i++){
+                 console.log(i+" : " + this.choice[i]);
+             }
+         };
+         Question.prototype.check=function(answer) {
+            if(Number(answer)==this.answer){
+                score++;
+                console.log("correct");
+                console.log("Your Score is: " +score);
+
+            }else{
+                console.log("Wrong!!");
+                console.log("Your Score is: " +score);
+            }
+            
+        };
+        // function score(){
+        //     let sc=0;
+        //     return function(correct){
+        //         if(correct){
+        //             sc++;
+        //         }
+        //         return sc;
+        //     }
+
+        // }
+        // var keepScore=score();
+        
+        var q1=new Question("Is javascript is client side language?",["Yes","No"],0);
+        var q2=new Question("Is premitive datatype contains Object ?",["Yes","No"],1);
+        var q3=new Question("Is sql is client sode langeage?",["Yes","No"],1);
+        var q4=new Question("Is AngulerJs is client side langeage?",["Yes","No"],0);
+        var q5=new Question("Is NodeJs is client side langeage?",["Yes","No"],1);
+
+        var ary=[q1,q2,q3,q4,q5];
+        nextQ();
+        function nextQ(){
+
+            var randomQ=ary[Math.floor(Math.random()* ary.length)];
+            randomQ.display(); 
+
+            var answer=prompt("Please select the correct answer..");
+            if(answer!=="exit"){
+                randomQ.check(parseInt(answer));
+                nextQ();
+            }
+
+        }
+        
+    })();
+
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        /*#canvas1 {
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+        }*/
+         .box1 {
+           display: inline-block;
+           height:30px;
+           width:30px;  
+            text-align:center;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <canvas id="canvas1"></canvas> -->
+    <div id="box"></div>
+
+
+    <script type="text/javascript" src="practice.js"></script>
+</body>
+</html>
