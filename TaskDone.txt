@@ -7,9 +7,9 @@ Task Status: Give your task status (Done, In Progress).
 Issue : Mention here if you are facing any issue when doing this task.
 
 Task : Learning NodeJs
-Work Done: Completed Asynchronous NodeJs Promises and Web Servers using Express library
+Work Done: Completed version control Git,application deployment and testing applications using mocha and expect	  
 Task Status:  In Progress
-Issue : No issue
+Issue : None
 
 05 Web Servers and Application Deployment
 ********************************************JavaScript*****************************************************
