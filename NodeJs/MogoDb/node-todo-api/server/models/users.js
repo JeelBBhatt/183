@@ -7,7 +7,7 @@ let User=mongoose.model('User',{
 		require:true,
 		trim:true,
 		minlength:1
-	},
+	}
 	// password:{
 
 	// 	type:Number,
