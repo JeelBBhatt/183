@@ -1,3 +1,5 @@
+//./mongod --dbpath ~/lcom154/Documents/183/NodeJs/MogoDb/mongo-data
+
 //const MongoClient=require('mongodb').MongoClient;
 const {MongoClient,ObjectID}=require('mongodb');//ES6 Destructuring
 

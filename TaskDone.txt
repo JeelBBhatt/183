@@ -7,7 +7,7 @@ Task Status: Give your task status (Done, In Progress).
 Issue : Mention here if you are facing any issue when doing this task.
 
 Task : Learning NodeJs
-Work Done: Completed version control Git,application deployment and testing applications using mocha and expect	  
+Work Done: Learn Mongodb and performed CRUD operations,learn default validation using mongoose
 Task Status:  In Progress
 Issue : None
 
@@ -33,7 +33,9 @@ Issue : None
 20-06-2018---->NodeJs:upto 17
 21-06-2018---->NodeJs:upto 33
 22-06-2018---->NodeJs:upto 46
-23-06-2018---->NodeJs:upto 
+23-06-2018---->NodeJs:upto 58
+25-06-2018---->NodeJs:upto 71 
+26-06-2018---->NodeJs:upto 
 
 
 

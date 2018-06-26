@@ -1,88 +1,50 @@
-const mongoose=require('mongoose');
+//./mongod --dbpath /home/lcom154/Documents/183/NodeJs/MogoDb/mongo-data
+const express=require('express');
+const bodyParser=require('body-parser');
 
-mongoose.Promise=global.Promise;
-mongoose.connect('mongodb://localhost:27017/TodoApp');
 
-//Create Model of tsodos
+let {mongoose}=require('./db/mongoose');
+var {Todo}=require('./models/todo');
+var {Users}=require('./models/users');
 
-let Todo=mongoose.model('Todo',{
+let app=express();
 
-	text:{
-		type: String,
-		required:true,
-		minlength:1,
-		trim:true
-	},
-	completed:{
-		type:Boolean,
-		default:false
-	},
-	completedAt:{
+app.use(bodyParser.json());
+app.post('/todos',(req,res)=>{
 
-		type:Number,
-		default:null
-	}
+	//console.log(req.body);
+	var todo=new Todo({
+		text:req.body.text
+	});
+
+	todo.save().then((doc)=>{
+		res.send(doc);
+	},(e)=>{
+		res.send(e);	
+	});
+
+});
+
+app.get('/todos',(req,res)=>{
+	Todo.find().then((todo)=>{
+		res.send({todo});
+	},(err)=>{
+		res.status(400).send(err);
+	});
+	
+
+});
+app.listen(3000,()=>{
+
+	console.log('started on port 3000');
 
 });
 
 
-let User=mongoose.model('User',{
-
-
-	email:{
-		type:String,
-		require:true,
-		trim:true,
-		minlength:1
-	},
-	// password:{
-
-	// 	type:Number,
-	// 	default:null
-	// }
-
-});
-
-let user1=new User({
-	email:' a   '
-});
-user1.save().then((result)=>{
-	console.log('saved todo',result);
-},(err)=>{
-	console.log('Unable to save todo',err);
-});
-
-// let newTodo=new Todo({text : 'Walkings'});
-
-// newTodo.save().then((result)=>{
-// 	console.log('saved todo',result);
-// },(err)=>{
-// 	console.log('Unable to save todo');
-// });
-
-// let newTodo1=new Todo({
-// 	text:'Learn Node JS'
-// });
-//create new todo
-// let newTodo1=new Todo({
-// 	text : 'Cooking',
-// 	completed:true,
-// 	completedAt:124});
-
-//add todo to the mongodb database
-// newTodo1.save().then((result)=>{
-// 	console.log('saved todo',JSON.stringify(result,undefined,2));
-// },(err)=>{
-// 	console.log('Unable to save todo',err);
-// });
+module.exports={app};
 
 
 
 
 
 
-
-
-//result
-//saved todo { __v: 0, text: 'Walkings', _id: 5b30df0b59194b6b7124ea72 }
-//__v for version
