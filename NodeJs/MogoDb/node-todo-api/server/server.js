@@ -1,12 +1,18 @@
+//limitless-chamber-73498
 //./mongod --dbpath /home/lcom154/Documents/183/NodeJs/MogoDb/mongo-data
+require('./config/config');
+
+const _ = require('lodash');
 const express=require('express');
 const bodyParser=require('body-parser');
 
 let {ObjectID}=require('mongodb');
 let {mongoose}=require('./db/mongoose');
 var {Todo}=require('./models/todo');
-var {Users}=require('./models/users');
+var {User}=require('./models/users');
+var {authenticate}=require('./middleware/authenticate');
 
+var port=process.env.PORT || 3000;
 let app=express();
 
 app.use(bodyParser.json());
@@ -48,17 +54,99 @@ app.get('/todos/:id',(req,res)=>{
 		}
 		res.send({todo});
 	}).catch((e)=>{
-			res.status(400).send();
+		res.status(400).send();
 	})
 	
 
 });
-app.listen(3000,()=>{
+app.delete('/todos/:id', (req, res) => {
+	var id = req.params.id;
 
-	console.log('started on port 3000');
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send();
+	}
+
+	Todo.findByIdAndRemove(id).then((todo) => {
+		if (!todo) {
+			return res.status(404).send();
+		}
+
+		res.send(todo);
+	}).catch((e) => {
+		res.status(400).send();
+	});
+});
+
+app.patch('/todos/:id', (req, res) => {
+	var id = req.params.id;
+	var body = _.pick(req.body, ['text', 'completed']);
+
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send();
+	}
+
+	if (_.isBoolean(body.completed) && body.completed) {
+		body.completedAt = new Date().getTime();
+	} else {
+		body.completed = false;
+		body.completedAt = null;
+	}
+
+	Todo.findByIdAndUpdate(id, {$set: body}, {new: true}).then((todo) => {
+		if (!todo) {
+			return res.status(404).send();
+		}
+
+		res.send({todo});
+	}).catch((e) => {
+		res.status(400).send();
+	})
+});
+
+
+/*************************************USERS***************************************/
+// app.post('/users', (req, res) => {
+//   var body = _.pick(req.body, ['email', 'password']);
+//   var user = new User(body);
+
+//   user.save().then(() => {
+//     return user.generateAuthToken();
+//   }).then((token) => {
+//     res.header('x-auth', token).send(user);
+//   }).catch((e) => {
+//     res.status(400).send(e);
+//   })
+// });
+
+app.post('/user',(req,res)=>{
+
+	var body = _.pick(req.body, ['email', 'password']);
+	var user=new User(body);
+
+	user.save().then(()=>{
+		//console.log(user);
+		return user.generateAuthToken();
+	}).then((token)=>{
+		console.log(user);
+		res.header('x-auth',token).send(user);
+	}).catch((e)=>{
+		res.status(400).send(e);	
+	});
 
 });
 
+
+
+app.get('/user/me',authenticate,(req,res)=>{
+
+	res.send(req.user);
+
+});
+app.listen(port,()=>{
+
+	console.log(`started on port ${port}`);
+
+});
 
 module.exports={app};
 
