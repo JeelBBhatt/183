@@ -65,7 +65,6 @@ UserSchema.methods.removeToken=function(token) {
 			tokens:{token}
 		}
 	})
-	console.log(user);
 }
 
 UserSchema.statics.findByToken=function(token) {
@@ -101,7 +100,6 @@ UserSchema.pre('save',function(next) {
 UserSchema.statics.findByCredetials = function(email,password) {
   var User = this;
 	return User.findOne({email}).then((user)=>{
-		console.log(user)
 		if(!user){
 			return Promise.reject();
 		}
