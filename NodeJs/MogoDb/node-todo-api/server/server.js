@@ -16,11 +16,12 @@ var port=process.env.PORT || 3000;
 let app=express();
 
 app.use(bodyParser.json());
-app.post('/todos',(req,res)=>{
+app.post('/todos',authenticate,(req,res)=>{
 
 	//console.log(req.body);
 	var todo=new Todo({
-		text:req.body.text
+		text:req.body.text,
+		_creator: req.user._id
 	});
 
 	todo.save().then((doc)=>{
@@ -31,8 +32,10 @@ app.post('/todos',(req,res)=>{
 
 });
 
-app.get('/todos',(req,res)=>{
-	Todo.find().then((todo)=>{
+app.get('/todos',authenticate,(req,res)=>{
+	Todo.find({
+		_creator:req.user._id
+	}).then((todo)=>{
 		res.send({todo});
 	},(err)=>{
 		res.status(400).send(err);
@@ -71,7 +74,7 @@ app.delete('/todos/:id', (req, res) => {
 			return res.status(404).send();
 		}
 
-		res.send(todo);
+		res.send({todo});
 	}).catch((e) => {
 		res.status(400).send();
 	});
@@ -105,18 +108,6 @@ app.patch('/todos/:id', (req, res) => {
 
 
 /*************************************USERS***************************************/
-// app.post('/users', (req, res) => {
-//   var body = _.pick(req.body, ['email', 'password']);
-//   var user = new User(body);
-
-//   user.save().then(() => {
-//     return user.generateAuthToken();
-//   }).then((token) => {
-//     res.header('x-auth', token).send(user);
-//   }).catch((e) => {
-//     res.status(400).send(e);
-//   })
-// });
 
 app.post('/user',(req,res)=>{
 
@@ -136,10 +127,32 @@ app.post('/user',(req,res)=>{
 });
 
 
-
 app.get('/user/me',authenticate,(req,res)=>{
 
 	res.send(req.user);
+
+});
+
+app.post('/user/login',(req,res)=>{
+
+var body = _.pick(req.body, ['email', 'password']);
+
+	User.findByCredetials(body.email,body.password).then((user)=>{
+		return user.generateAuthToken().then((token)=>{
+		res.header('x-auth',token).send(user);
+		});
+	}).catch((e)=>{
+		res.status(400).send();
+	});
+});
+
+app.delete('/user/me/token',authenticate,(req,res)=>{
+req.user.removeToken(req.token).then(()=>{
+	res.status(200).send();
+}).catch((e)=>{
+	res.status(400).send();
+
+});
 
 });
 app.listen(port,()=>{

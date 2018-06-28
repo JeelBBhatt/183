@@ -16,7 +16,8 @@ var id='5b30e58a388482a2783a7a09';
 // 	}
 // 	console.log(todo);
 // })
-
+User.findOne()
+User.find()
 User.findById(id).then((user)=>{
 	if(!user){
 		return console.log('User not found');
