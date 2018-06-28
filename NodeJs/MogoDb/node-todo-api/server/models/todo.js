@@ -25,3 +25,8 @@ var Todo=mongoose.model('Todo',{
 
 });
 module.exports={Todo};
+
+
+//export MONGOLAB_URI="mongodb://username:password@ds01316.mlab.com:1316/food"
+
+//SET MONGOLAB_URI="mongodb://janekya:123abc@@ds018168.mlab.com:18168/todoapp"
