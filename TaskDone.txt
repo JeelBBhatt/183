@@ -5,10 +5,15 @@ Task : Mention your task name or title.
 Work Done: - Explain your task in briefly. What points are completed in this task. 
 Task Status: Give your task status (Done, In Progress).
 Issue : Mention here if you are facing any issue when doing this task.
-
+***********************************************************************************************************
 Task : Learning NodeJs
-Work Done: Learnt security and authentication using JWTs Hashing and bcryptjs
+Work Done: Completed security and authentication,learnt advance postman and socket.io Emitting and Listening Events
 Task Status:  In Progress
+Issue : None
+
+
+Task: Learning socket_io and making chat application
+Task Status: In Progress
 Issue : None
 
 05 Web Servers and Application Deployment
@@ -37,7 +42,10 @@ Issue : None
 25-06-2018---->NodeJs:upto 71 
 26-06-2018---->NodeJs:upto 86
 27-06-2018---->NodeJs:upto 95
-28-06-2018---->NodeJs:upto 
+28-06-2018---->NodeJs:upto 109
+29-06-2018---->NodeJs:upto 112
+03-07-2018---->NodeJs:upto 125
+04-07-2018---->NodeJs:Completed
 
 
 
