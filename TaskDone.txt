@@ -53,7 +53,7 @@ Issue : None
 06-07-2018---->AngularJs:section-2,3 upto 07
 07-07-2018---->AngularJs:section-3,4
 09-07-2018---->AngularJs:section-5 upto 6
-10-07-2018---->AngularJs:section-
+10-07-2018---->AngularJs:section-5,6
 
 
 
