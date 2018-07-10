@@ -29,7 +29,7 @@ geocode.geocodeAddress(argv.address,(errroMessage,result)=>{
 	}else{
 		console.log(JSON.stringify(result,undefined,2));
 	}
-})
+});
 	}
 });
 

@@ -70,7 +70,7 @@ app.delete('/todos/:id',authenticate,async (req, res) => {
 	if (!ObjectID.isValid(id)) {
 		return res.status(404).send();
 	}
-	
+
 	try{
 		const todo= await Todo.findOneAndRemove({
 			_id:id,
@@ -134,7 +134,7 @@ app.delete('/todos/:id',authenticate,async (req, res) => {
 	// 	return user.generateAuthToken();
 	// }).then((token)=>{
 	// 	console.log(user);
-	
+
 	// }).catch((e)=>{
 		
 	// });
@@ -175,7 +175,7 @@ app.delete('/todos/:id',authenticate,async (req, res) => {
 		}catch(e) {
 			res.status(400).send();
 		}
-		
+
 	});
 
 	app.listen(port,()=>{
@@ -188,10 +188,6 @@ app.delete('/todos/:id',authenticate,async (req, res) => {
 
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjM0YTZiZmVhNzViZmFmMmVhMWM4OTkiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTMwMTc3MjE1fQ.LO50ROKidT8M3_VeHCsQ3B_6Vto7hsimIwS0zyrP3xg
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjM0YTZiZmVhNzViZmFmMmVhMWM4OTkiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTMwMTc3MzA5fQ.nKbFLm3qjkLggcLFOfk30Ehc0UyqJGzMLJiRcjj7fq8
-
-
-
-
 
 
 

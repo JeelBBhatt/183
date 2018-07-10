@@ -6,9 +6,9 @@ Work Done: - Explain your task in briefly. What points are completed in this tas
 Task Status: Give your task status (Done, In Progress).
 Issue : Mention here if you are facing any issue when doing this task.
 ***********************************************************************************************************
-Task : Learning NodeJs
-Work Done: Completed security and authentication,learnt advance postman and socket.io Emitting and Listening Events
-Task Status:  In Progress
+Task : Learning AngularJs
+Work Done: Learnt angular directives
+Task Status: In Progress
 Issue : None
 
 
@@ -47,7 +47,13 @@ Issue : None
 03-07-2018---->NodeJs:upto 125
 04-07-2018---->NodeJs:Completed
 
+*********************************************AngularJs*****************************************************
 
+05-07-2018---->AngularJs:section-1,2 upto 21
+06-07-2018---->AngularJs:section-2,3 upto 07
+07-07-2018---->AngularJs:section-3,4
+09-07-2018---->AngularJs:section-5 upto 6
+10-07-2018---->AngularJs:section-
 
 
 

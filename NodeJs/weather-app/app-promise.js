@@ -22,7 +22,6 @@ var geocodeUrl=`https://maps.googleapis.com/maps/api/geocode/json?address=${enco
 
 axios.get(geocodeUrl).then((response)=>{
 
-	
 	let latitude=response.data.results[0].geometry.location.lat;
 	let longitude=response.data.results[0].geometry.location.lng;
 	let weatherUrl=`https://api.darksky.net/forecast/a731c1060a79389288c4f3174cfe1ad7/${latitude},${longitude}`;
